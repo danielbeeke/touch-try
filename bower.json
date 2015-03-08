@@ -2,5 +2,7 @@
   "name": "danielbeeke",
   "version": "0.0.0",
   "dependencies": {
+    "dragdealer": "skidding/dragdealer#~0.9.8",
+    "jquery": "~2.1.3"
   }
 }

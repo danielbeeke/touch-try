@@ -1,23 +1,26 @@
 ---
-layout: default
+layout: html
 ---
+<div class="slides" id="slides">
+  <div class="slides-handle">
+    <div class="slides-slide frontslide">
+      <img class="frontslide-photo" src="/img/me.jpg">
+      <h1 class="frontslide-text">
+        I am Daniel Beeke,
+        I am a thinking creator
+      </h1>
+      <div class="frontslide-next"></div>
+    </div>
 
-<div class="home">
+    <div class="slides-slide aboutslide">
+      <div class="aboutme">
+        <img class="aboutme-photo" src="/img/me.jpg">
+        <div class="aboutme-text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices id ex non finibus. Maecenas in ex ornare, gravida lectus sed, vestibulum justo. Vivamus nisi diam, pretium at lorem a, suscipit euismod enim. Donec arcu metus, ultrices vel mattis nec, finibus ut eros. In varius faucibus pellentesque. Fusce ac justo leo. Phasellus porta sodales auctor. Pellentesque accumsan malesuada feugiat.</p>
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+          <p>Phasellus lorem neque, consequat placerat porttitor eu, posuere eget augue. Fusce rutrum nibh eu finibus tincidunt. Cras eget pulvinar sapien, nec scelerisque eros. Cras id mi vel mauris malesuada hendrerit. Aliquam condimentum sed velit eu suscipit. In finibus, quam vitae consequat ornare, ligula augue imperdiet augue, ut scelerisque massa odio sit amet mi. Suspendisse sit amet justo eu mauris pretium mollis. Maecenas commodo ligula in pharetra dictum. Praesent sit amet ligula lectus. Nunc ante erat, iaculis non tellus quis, pulvinar malesuada nisl. Phasellus non facilisis ligula, eu consectetur ligula. Vestibulum sagittis odio diam, cursus laoreet neque luctus sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa lacus, lacinia a suscipit sed, aliquam at nunc. Praesent quis tristique neque. Suspendisse quam mi, vestibulum sed bibendum a, aliquam sit amet enim.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
