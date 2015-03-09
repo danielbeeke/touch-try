@@ -1,0 +1,16 @@
+.has--mainmenu-link--transition {
+  .mainmenu, .aboutme {
+    transition: all $speed $easing;
+  }
+}
+
+.is--mainmenu-link--transition {
+  .aboutme {
+    margin-left: -50%;
+  }
+
+  .mainmenu {
+    width: 100%;
+    margin-left: 0;
+  }
+}

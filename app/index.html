@@ -21,6 +21,13 @@ layout: html
           <p>Phasellus lorem neque, consequat placerat porttitor eu, posuere eget augue. Fusce rutrum nibh eu finibus tincidunt. Cras eget pulvinar sapien, nec scelerisque eros. Cras id mi vel mauris malesuada hendrerit. Aliquam condimentum sed velit eu suscipit. In finibus, quam vitae consequat ornare, ligula augue imperdiet augue, ut scelerisque massa odio sit amet mi. Suspendisse sit amet justo eu mauris pretium mollis. Maecenas commodo ligula in pharetra dictum. Praesent sit amet ligula lectus. Nunc ante erat, iaculis non tellus quis, pulvinar malesuada nisl. Phasellus non facilisis ligula, eu consectetur ligula. Vestibulum sagittis odio diam, cursus laoreet neque luctus sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa lacus, lacinia a suscipit sed, aliquam at nunc. Praesent quis tristique neque. Suspendisse quam mi, vestibulum sed bibendum a, aliquam sit amet enim.</p>
         </div>
       </div>
+
+      <div class="mainmenu mainmenu--linkcount-{{ site.categories | size }}">
+        {% for category in site.categories %}
+          <a class="mainmenu-link" href="#">{{ category[0] }}</a>
+        {% endfor %}
+      </div>
+
     </div>
   </div>
 </div>
