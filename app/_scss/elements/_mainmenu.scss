@@ -1,12 +1,13 @@
 .mainmenu {
+  width: 100%;
   float: left;
-  margin-left: 50%;
   height: 100%;
-  width: 50%;
-  background: #eee;
+  transform: translateX(50%);
 }
 
 .mainmenu-link {
+  background: #eee;
+  float: left;
   display: block;
   width: 100%;
 }
@@ -15,4 +16,9 @@
   .mainmenu.mainmenu--linkcount-#{$i} .mainmenu-link {
     height: 100% / $i;
   }
+}
+
+.mainmenu-link--development {
+  background: purple;
+  color: white;
 }

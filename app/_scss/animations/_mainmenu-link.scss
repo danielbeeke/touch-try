@@ -1,16 +1,33 @@
 .has--mainmenu-link--transition {
-  .mainmenu, .aboutme {
+  .mainmenu-link {
     transition: all $speed $easing;
+  }
+
+  .mainmenu {
+    transition: transform $speed $easing;
+  }
+
+  .aboutme {
+    transition: transform $speed $easing;
+    transform: translateX(0);
   }
 }
 
 .is--mainmenu-link--transition {
-  .aboutme {
-    margin-left: -50%;
+  .mainmenu-link:not(.mainmenu-link--is-active) {
+    height: 0 !important;
+  }
+
+  .mainmenu-link.mainmenu-link--is-active {
+    height: 100%;
+    z-index: 2;
   }
 
   .mainmenu {
-    width: 100%;
-    margin-left: 0;
+    transform: translateX(0);
+  }
+
+  .aboutme {
+    transform: translateX(-100%);
   }
 }

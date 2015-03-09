@@ -24,10 +24,9 @@ layout: html
 
       <div class="mainmenu mainmenu--linkcount-{{ site.categories | size }}">
         {% for category in site.categories %}
-          <a class="mainmenu-link" href="#">{{ category[0] }}</a>
+          <a class="mainmenu-link mainmenu-link--{{ category[0] }}" href="#"> </a>
         {% endfor %}
       </div>
-
     </div>
   </div>
 </div>
