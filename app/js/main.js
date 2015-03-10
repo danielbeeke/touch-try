@@ -21,16 +21,14 @@ $(function() {
   function startDrag(e) {
     removeTransition()
     dragging = true
+    $('body').addClass('is--dragging')
     startX = e.clientX
   }
 
   function endDrag(e) {
     dragging = false
+    $('body').removeClass('is--dragging')
     endX = e.clientX
-
-    $('.mainmenu-link').removeAttr('style').css('height', (100 / menuItemCount) + '%')
-
-    $('.mainmenu-link--is-currently-dragged').removeClass('mainmenu-link--is-currently-dragged')
 
     var newPoint = 0
     var diff = startX - endX
@@ -40,6 +38,16 @@ $(function() {
     }
     else if (diff < -flipPoint  && slideIndex > 0) {
       slideIndex = slideIndex - 1
+    }
+
+    if ($('.mainmenu-link--is-dragged').length && diff > flipPoint) {
+      $('.mainmenu-link--is-dragged').addClass('mainmenu-link--is-active')
+      $('body').addClass('has--active-mainmenu-link')
+      $('.mainmenu-link').removeAttr('style')
+    }
+    else {
+      $('.mainmenu-link').removeAttr('style').css('height', (100 / menuItemCount) + '%')
+      $('.mainmenu-link--is-dragged').removeClass('mainmenu-link--is-dragged')
     }
 
     element.css('transition', 'all .5s ease')
@@ -68,10 +76,10 @@ $(function() {
 
 
       if ($(e.target).hasClass('mainmenu-link') && diff > 0) {
-        $('.mainmenu-link').css('transition', 'none')
+        $('.mainmenu-link').css('transition', 'opacity .4s ease-in-out')
 
-        $('.mainmenu-link--is-currently-dragged').removeClass('mainmenu-link--is-currently-dragged')
-        $(e.target).addClass('mainmenu-link--is-currently-dragged')
+        $('.mainmenu-link--is-dragged').removeClass('mainmenu-link--is-dragged')
+        $(e.target).addClass('mainmenu-link--is-dragged')
 
         var maxPercentageToGive = 1 - (1 / menuItemCount)
         var dragPercentage = diff / (resistancePoint / 100)
@@ -81,8 +89,8 @@ $(function() {
         var draggedHeight = ((dragPercentage * maxPercentageToGive) + defaultHeight) + '%'
         var othersHeight = ((100 - dragPercentage) / menuItemCount) + '%'
 
-        $('.mainmenu-link.mainmenu-link--is-currently-dragged').css('height', draggedHeight)
-        $('.mainmenu-link:not(.mainmenu-link--is-currently-dragged)').css('height', othersHeight)
+        $('.mainmenu-link.mainmenu-link--is-dragged').css('height', draggedHeight)
+        $('.mainmenu-link:not(.mainmenu-link--is-dragged)').css('height', othersHeight)
       }
 
     }
