@@ -10,6 +10,7 @@
   float: left;
   display: block;
   width: 100%;
+  transition: height $speed $easing;
 }
 
 @for $i from 1 to 5 {

@@ -3,6 +3,7 @@
   height: 100%;
   overflow: hidden;
   transform: translateX(0);
+  cursor: all-scroll;
 }
 
 .slides-handle {
@@ -15,4 +16,12 @@
   height: 100%;
   width: 100vw;
   float: left;
+
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none;
 }
