@@ -11,17 +11,44 @@
   display: block;
   width: 100%;
   transition: height $speed $easing;
+  position: relative;
+  overflow: hidden;
+
+  &:nth-child(1) {
+    background: $purple;
+  }
+
+  &:nth-child(2) {
+    background: $green;
+  }
+
+  &:nth-child(3) {
+    background: $blue;
+  }
+}
+
+.mainmenu-link-text {
+  font-size: 70px;
+  font-weight: 900;
+  color: white;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  margin-left: 40px;
+  transform: translateY(-50%);
+}
+
+.mainmenu-link-next {
+  &:after, &:before {
+    background: white;
+  }
 }
 
 @for $i from 1 to 5 {
   .mainmenu.mainmenu--linkcount-#{$i} .mainmenu-link {
     height: 100% / $i;
   }
-}
-
-.mainmenu-link--development {
-  background: purple;
-  color: white;
 }
 
 .has--active-mainmenu-link {

@@ -11,7 +11,7 @@ layout: html
         </div>
         <img class="frontslide-photo" src="img/me.jpg">
       </div>
-      <div class="frontslide-next"></div>
+      <div class="frontslide-next nextarrow"></div>
     </div>
 
     <div class="slides-slide aboutslide">
@@ -28,7 +28,10 @@ layout: html
 
       <div class="mainmenu mainmenu--linkcount-{{ site.categories | size }}">
         {% for category in site.categories %}
-          <div class="mainmenu-link mainmenu-link--{{ category[0] }}"></div>
+          <div class="mainmenu-link mainmenu-link--{{ category[0] }}">
+            <h2 class="mainmenu-link-text">{{ category[0] }}</h2>
+            <div class="mainmenu-link-next nextarrow"></div>
+          </div>
         {% endfor %}
       </div>
     </div>
