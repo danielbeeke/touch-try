@@ -1,8 +1,8 @@
 .mainmenu {
-  width: 100%;
+  width: 50vw;
   float: left;
   height: 100%;
-  transform: translateX(50%);
+  transition: width $speed $easing;
 }
 
 .mainmenu-link {
@@ -25,6 +25,10 @@
 }
 
 .has--active-mainmenu-link {
+  .mainmenu {
+    width: 100vw;
+  }
+
   .mainmenu-link {
     &:not(.mainmenu-link--is-active) {
       height: 0;
