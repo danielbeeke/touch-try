@@ -1,5 +1,9 @@
 $(function() {
 
+  $('img').on('dragstart', function(event) { event.preventDefault(); });
+
+  $('body').removeClass('is--transitioning-in')
+
   $('body')
   .on('mousedown', startDrag)
   .on('mouseup', endDrag)

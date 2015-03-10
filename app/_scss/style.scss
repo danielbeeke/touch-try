@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'typography';
 
 @import 'layouts/layout';
 
@@ -8,3 +9,7 @@
 @import 'elements/aboutme';
 
 @import 'animations/mainmenu-link';
+
+#__bs_notify__ {
+  display: none !important;
+}

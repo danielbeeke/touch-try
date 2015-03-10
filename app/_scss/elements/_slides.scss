@@ -4,7 +4,6 @@
   overflow: hidden;
   transform: translateX(0);
   cursor: all-scroll;
-  background: #ccc;
 }
 
 .slides-handle {
@@ -13,11 +12,11 @@
 }
 
 .slides-slide {
+  position: relative;
   overflow: hidden;
   height: 100%;
   width: 100vw;
   float: left;
-  background: white;
 
   -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
@@ -26,6 +25,10 @@
   /* No support for these yet, use at own risk */
   -o-user-select: none;
   user-select: none;
+}
+
+.aboutslide {
+  box-shadow: 0 0 30px black;
 }
 
 .has--active-mainmenu-link {
