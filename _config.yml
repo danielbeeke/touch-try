@@ -23,8 +23,6 @@ show_drafts: true
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
-
-
 prose:
   rooturl: 'app/_posts'
   siteurl: 'danielbeeke.nl/danielbeeke'
