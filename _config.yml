@@ -23,4 +23,24 @@ show_drafts: true
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
-pygments: true
+
+
+prose:
+  rooturl: 'app/_posts'
+  siteurl: 'danielbeeke.nl/danielbeeke'
+  media: 'img'
+  metadata:
+    app/_posts:
+      - name: "category"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+          value: ""
