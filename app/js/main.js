@@ -27,6 +27,9 @@ $(function() {
     dragging = true
     $('body').addClass('is--dragging')
     startX = e.clientX
+    // $('.mainmenu-link').removeAttr('style')
+    // $('body').removeClass('has--active-mainmenu-link')
+    // $('.mainmenu-link--is-dragged').removeClass('mainmenu-link--is-dragged')
   }
 
   function endDrag(e) {
@@ -79,7 +82,7 @@ $(function() {
       }
 
 
-      if ($(e.target).hasClass('mainmenu-link') && diff > 0) {
+      if ($(e.target).hasClass('mainmenu-link')) {
         $('.mainmenu-link').css('transition', 'opacity .4s ease-in-out')
 
         $('.mainmenu-link--is-dragged').removeClass('mainmenu-link--is-dragged')

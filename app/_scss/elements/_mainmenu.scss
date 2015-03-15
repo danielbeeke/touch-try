@@ -37,6 +37,8 @@
   margin: 0;
   margin-left: 40px;
   transform: translateY(-50%);
+  transition: opacity $speed $easing;
+  opacity: 1;
 }
 
 .mainmenu-link-next {
@@ -63,6 +65,15 @@
 
     &.mainmenu-link--is-active {
       height: 100%;
+    }
+  }
+}
+
+.has--active-mainmenu-link,
+.is--dragging {
+  .mainmenu-link:not(.mainmenu-link--is-dragged) {
+    .mainmenu-link-text, .mainmenu-link-next {
+      opacity: 0;
     }
   }
 }
