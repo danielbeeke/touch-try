@@ -42,3 +42,8 @@ prose:
           element: "text"
           label: "Title"
           value: ""
+        field:
+          element: "text"
+          label: "Date"
+          value: ""
+
