@@ -22,6 +22,7 @@ $(function() {
   var resistanceSpeed = .3
   var menuItemCount = $('.mainmenu-link').length
 
+
   function startDrag(e) {
     removeTransition()
     dragging = true
