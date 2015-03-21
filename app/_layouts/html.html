@@ -6,6 +6,12 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
+        <!-- build:js(app) js/head-scripts.js -->
+        <script src="_bower_components/jquery/dist/jquery.js"></script>
+        <script src="js/asymmetric-slider.js"></script>
+        <script src="js/main.js"></script>
+        <!-- endbuild -->
+
         <!-- build:css({app,.tmp}) css/main.css -->
         <link rel="stylesheet" href="css/style.css">
         <style type="text/css">
@@ -26,11 +32,8 @@
    {{ content }}
 
     <!-- build:js(app) js/scripts.js -->
-    <script src="_bower_components/jquery/dist/jquery.js"></script>
-    <script src="js/asymmetric-slider.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/misc.js"></script>
-
     <!-- endbuild -->
+
     </body>
 </html>

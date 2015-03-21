@@ -8,7 +8,8 @@
     resistanceSpeed: 0.7,
     overleapSpeed: 0.2,
     flipPoint: 400,
-    transitionString: "all .5s ease"
+    transitionString: "all .5s ease",
+    startSlide: 0
   };
 
   function Plugin(element, options) {
@@ -29,14 +30,19 @@
       this.startX = 0
       this.endX = 0
       this.windowWidth = $(window).width()
-      this.slideIndex = 0
+      this.slideIndex = this.options.startSlide
       this.diff = 0
 
       this.slideCount = $(this.element).find('.slides-slide').length
-
       this.dragElement = false
 
       that = this
+
+      var $currentSlide = $(that.element).find('.slides-slide:nth-child(' + (that.slideIndex + 1) + ')')
+      var currentSlidePositionLeft = $currentSlide.position().left
+      var transformX = currentSlidePositionLeft
+
+      $('.slides-handle', that.element).css('transform', 'translate3d(' + -transformX + 'px, 0, 0)')
 
       $('body')
       .on('mousedown', this.onStart)
