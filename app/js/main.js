@@ -1,9 +1,14 @@
 $(function() {
+  var section = window.location.pathname.split('/')[1]
+  var startSlide = 0
 
-  $('body').addClass('has-increased-main-menu')
-  $('.mainmenu-link').css('transition', 'none')
-  $('.mainmenuslide').css('transition', 'none')
-  $('.mainmenu-link--blog').addClass('mainmenu-link--is-dragged')
+  if (section) {
+    $('body').addClass('has-increased-main-menu')
+    $('.mainmenu-link').css('transition', 'none')
+    $('.mainmenuslide').css('transition', 'none')
+    $('.mainmenu-link--' + section).addClass('mainmenu-link--is-dragged')
+    startSlide = 2
+  }
 
   setTimeout(function () {
     $('.mainmenu-link').removeAttr('style')
@@ -11,10 +16,13 @@ $(function() {
   }, 100)
 
   $('#slides').aslider({
-    startSlide: 2,
+    startSlide: startSlide,
     endCallback: function (info) {
       if (info.slideIndex == 2) {
         $('body').addClass('has-increased-main-menu')
+        $('.mainmenu-link--is-dragged').one('transitionend', function () {
+          window.location = $(this).attr('data-category')
+        })
       }
       else {
         $('body').removeClass('has--dragged-mainmenu-link')
