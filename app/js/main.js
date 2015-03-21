@@ -25,12 +25,12 @@ $(function() {
   function startDrag(e) {
     removeTransition()
     dragging = true
-    $('body').addClass('is--dragging')
     startX = e.screenX
     elementStartedWith = e.target
   }
 
   function endDrag(e) {
+    elementStartedWith = null
     element.css('transition', 'all .5s ease')
     dragging = false
     $('body').removeClass('is--dragging')
@@ -52,6 +52,7 @@ $(function() {
       $('.mainmenu-link--is-dragged').addClass('mainmenu-link--is-active')
       $('body').addClass('has--active-mainmenu-link')
       $('.mainmenu-link').removeAttr('style')
+      element.css('transform', 'translate3d(-150vw, 0, 0)')
     }
     else {
       $('.mainmenu-link').removeAttr('style').css('height', (100 / menuItemCount) + '%')
@@ -75,18 +76,20 @@ $(function() {
       if (diff > 0 && slideIndex < (slideCount - 1) || diff < 0  && slideIndex > 0) {
         element.css('transform', 'translate3d(' + (((slideIndex * -1) * windowWidth) + e.screenX - startX) + 'px, 0, 0)')
       }
-      else if (resistancePoint > Math.abs(diff)) {
+      else {
         element.css('transform', 'translate3d(' + (((slideIndex * -1) * windowWidth) + (e.screenX - startX) * resistanceSpeed) + 'px, 0, 0)')
       }
 
       if ($(elementStartedWith).hasClass('mainmenu-link')) {
+        $('body').addClass('is--dragging')
+
         $('.mainmenu-link').css('transition', 'opacity .5s ease-in-out')
 
         $('.mainmenu-link--is-dragged').removeClass('mainmenu-link--is-dragged')
         $(elementStartedWith).addClass('mainmenu-link--is-dragged')
 
         var maxPercentageToGive = 1 - (1 / menuItemCount)
-        var dragPercentage = diff / (resistancePoint / 100)
+        var dragPercentage = (diff * resistanceSpeed) / (resistancePoint / 100)
 
         var defaultHeight = 100 / menuItemCount
 
