@@ -38,15 +38,15 @@
   font-size: 30px;
 }
 
-.is--transitioning-in {
-  .frontslide-next {
-    transform: translate(0, -50%);
-    opacity: 0;
-  }
-}
+// .is--transitioning-in {
+//   .frontslide-next {
+//     transform: translate(0, -50%);
+//     opacity: 0;
+//   }
+// }
 
-.is--dragging {
-  .frontslide-next {
-    transform: translate(90px, -50%);
-  }
-}
+// .is--dragging {
+//   .frontslide-next {
+//     transform: translate(90px, -50%);
+//   }
+// }

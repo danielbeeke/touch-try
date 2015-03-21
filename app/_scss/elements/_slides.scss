@@ -11,6 +11,12 @@
   height: 100%;
 }
 
+.slides-handle-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 .slides-slide {
   position: relative;
   overflow: hidden;
@@ -25,4 +31,15 @@
   /* No support for these yet, use at own risk */
   -o-user-select: none;
   user-select: none;
+}
+
+.mainmenuslide,
+.aboutslide {
+  width: 50vw;
+}
+
+.has-increased-main-menu {
+  .mainmenuslide {
+    width: 100vw;
+  }
 }
