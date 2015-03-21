@@ -1,5 +1,4 @@
 .mainmenu {
-  width: 50vw;
   float: left;
   height: 100%;
   transition: width $speed $easing;
@@ -42,10 +41,6 @@
 }
 
 .has--active-mainmenu-link {
-  .mainmenu {
-    width: 100vw;
-  }
-
   .mainmenu-link {
     &:not(.mainmenu-link--is-active) {
       height: 0;

@@ -1,7 +1,6 @@
 $(function() {
 
   $('img').on('dragstart', function(event) { event.preventDefault(); });
-
   $('body').removeClass('is--transitioning-in')
 
   $('body')
@@ -21,6 +20,7 @@ $(function() {
   var resistanceSpeed = .3
   var menuItemCount = $('.mainmenu-link').length
   var elementStartedWith
+  var slideOffset = 0
 
   function startDrag(e) {
     removeTransition()
@@ -46,7 +46,7 @@ $(function() {
       slideIndex = slideIndex - 1
     }
 
-    element.css('transform', 'translate3d(' + (((slideIndex * -1) * windowWidth) + newPoint) + 'px, 0, 0)')
+    element.css('transform', 'translate3d(' + ((((slideIndex * -1) + slideOffset) * windowWidth) + newPoint) + 'px, 0, 0)')
 
     if ($('.mainmenu-link--is-dragged').length && diff > flipPoint) {
       $('.mainmenu-link--is-dragged').addClass('mainmenu-link--is-active')
@@ -74,10 +74,10 @@ $(function() {
       var diff = startX - currentX
 
       if (diff > 0 && slideIndex < (slideCount - 1) || diff < 0  && slideIndex > 0) {
-        element.css('transform', 'translate3d(' + (((slideIndex * -1) * windowWidth) + e.screenX - startX) + 'px, 0, 0)')
+        element.css('transform', 'translate3d(' + ((((slideIndex * -1) + slideOffset) * windowWidth) + e.screenX - startX) + 'px, 0, 0)')
       }
       else {
-        element.css('transform', 'translate3d(' + (((slideIndex * -1) * windowWidth) + (e.screenX - startX) * resistanceSpeed) + 'px, 0, 0)')
+        element.css('transform', 'translate3d(' + ((((slideIndex * -1) + slideOffset) * windowWidth) + (e.screenX - startX) * resistanceSpeed) + 'px, 0, 0)')
       }
 
       if ($(elementStartedWith).hasClass('mainmenu-link')) {
