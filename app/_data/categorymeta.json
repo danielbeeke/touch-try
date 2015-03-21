@@ -1,0 +1,10 @@
+{
+  "thoughts": {
+    "label": "Thoughts",
+    "color": "purple",
+  },
+  "blog": {
+    "label": "Blog",
+    "color": "green"
+  }
+}

@@ -28,7 +28,7 @@ layout: html
 
       <div class="mainmenu mainmenu--linkcount-{{ site.categories | size }}">
         {% for category in site.categories %}
-          <div class="mainmenu-link mainmenu-link--{{ category[0] }}">
+          <div class="mainmenu-link mainmenu-link--{{ category[0] }} {{ category[0] }}" data-category="/{{ category[0] }}">
             <h2 class="mainmenu-link-text">{{ category[0] }}</h2>
             <div class="mainmenu-link-next nextarrow"></div>
           </div>

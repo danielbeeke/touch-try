@@ -13,18 +13,6 @@
   transition: height $speed $easing;
   position: relative;
   overflow: hidden;
-
-  &:nth-child(1) {
-    background: $purple;
-  }
-
-  &:nth-child(2) {
-    background: $green;
-  }
-
-  &:nth-child(3) {
-    background: $blue;
-  }
 }
 
 .mainmenu-link-text {
@@ -37,7 +25,7 @@
   margin: 0;
   margin-left: 40px;
   transform: translateY(-50%);
-  transition: opacity $speed $easing;
+  transition: all $speed $easing;
   opacity: 1;
 }
 
@@ -75,5 +63,14 @@
     .mainmenu-link-text, .mainmenu-link-next {
       opacity: 0;
     }
+  }
+}
+
+.has--active-mainmenu-link {
+  .mainmenu-link-text {
+    transform: translate(100px, -50vh);
+  }
+  .mainmenu-link-next {
+    opacity: 0;
   }
 }
