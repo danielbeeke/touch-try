@@ -5,6 +5,7 @@ $(function() {
   if (section) {
     $('body').addClass('has-increased-main-menu')
     $('.mainmenu-link').css('transition', 'none')
+    $('.mainmenu-link-next').css('transition', 'none')
     $('.mainmenuslide').css('transition', 'none')
     $('.mainmenu-link--' + section).addClass('mainmenu-link--is-dragged')
     startSlide = 2
@@ -13,6 +14,7 @@ $(function() {
   setTimeout(function () {
     $('.mainmenu-link').removeAttr('style')
     $('.mainmenuslide').removeAttr('style')
+    $('.mainmenu-link-next').removeAttr('style')
   }, 100)
 
   $('#slides').aslider({
@@ -33,10 +35,10 @@ $(function() {
         }
       }
       else {
-        $('body').removeClass('has--dragged-mainmenu-link')
         $('body').removeClass('has-increased-main-menu')
       }
 
+      $('body').removeClass('has--dragged-mainmenu-link')
       $('.mainmenu-link').removeAttr('style')
 
       if (info.slideIndex < 2 && section) {
@@ -60,6 +62,7 @@ $(function() {
       }
 
       if ($menuLink && info.diff < 0 && info.slideIndex != 2 || $menuLink && info.diff > 0 && info.slideIndex == 2) {
+        var horizontalWidthToAnimate
         $('body').addClass('has--dragged-mainmenu-link')
         $('.mainmenu-link--is-dragged').removeClass('mainmenu-link--is-dragged')
         $menuLink.addClass('mainmenu-link--is-dragged')
@@ -68,7 +71,13 @@ $(function() {
 
         var menuItemCount = $('.mainmenu-link').length
         var defaultPercentage = 1 / menuItemCount
-        var horizontalWidthToAnimate = $(window).width() / 2
+
+        if (info.slideIndex == 2) {
+          horizontalWidthToAnimate = $(window).width() / 2
+        }
+        else {
+          horizontalWidthToAnimate = $(window).width()
+        }
 
         var percentageDragged = (1 / horizontalWidthToAnimate) * Math.abs(info.diff) * info.options.resistanceSpeed
 

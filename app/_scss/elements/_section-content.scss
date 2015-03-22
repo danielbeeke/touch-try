@@ -4,7 +4,13 @@
 }
 
 .has-increased-main-menu {
-  .section-content {
+  .mainmenu-link--is-dragged .section-content {
     opacity: 1;
+  }
+}
+
+.has--dragged-mainmenu-link {
+  .section-content {
+    opacity: 0 !important;
   }
 }
