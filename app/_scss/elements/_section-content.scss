@@ -1,6 +1,15 @@
 .section-content {
   opacity: 0;
-  transition: opacity $speed $easing;
+  transition: all $speed $easing;
+  width: 50vw;
+  box-sizing: content-box;
+  padding-right: 20px;
+  height: 100vh;
+  position: absolute;
+  left: 50vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transform: translateX(0);
 }
 
 .has-increased-main-menu {
@@ -9,8 +18,8 @@
   }
 }
 
-.has--dragged-mainmenu-link {
+.is--transitioning-in {
   .section-content {
-    opacity: 0 !important;
+    transform: translateX(50px);
   }
 }
