@@ -91,10 +91,10 @@
         if (that.diff) {
           var $currentSlide = $(that.element).find('.slides-slide:nth-child(' + (that.slideIndex + 1) + ')')
           var currentSlidePositionLeft = $currentSlide.position().left
+          var currentSlideEnd = $currentSlide.width() + currentSlidePositionLeft
 
           // Add resistance if last or first slide.
-          // TODO Resistance should be added on the width of the slider not the count of slides.
-          if (that.diff > 0 && that.slideIndex == 0 || that.diff < 0 && that.slideIndex == that.slideCount - 1) {
+          if (that.diff > 0 && currentSlidePositionLeft == 0 || that.diff < 0 && currentSlideEnd > $(that.element).width()) {
             var transformX = (that.diff * that.options.overleapSpeed) - currentSlidePositionLeft
           }
           else {

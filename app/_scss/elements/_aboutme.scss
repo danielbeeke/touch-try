@@ -6,12 +6,7 @@
   position: relative;
   z-index: 2;
   padding: 100px;
-}
-
-.aboutme-inner {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  overflow-y: scroll;
 }
 
 .aboutme-photo {

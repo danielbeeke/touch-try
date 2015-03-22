@@ -1,5 +1,5 @@
 .frontslide {
-  background-color: $orange;
+  background-color: $blue;
   box-shadow: 0 0 30px black;
   position: relative;
   z-index: 1;
@@ -14,7 +14,7 @@
 }
 
 .frontslide-photo {
-  width: 200px;
+  width: 160px;
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
@@ -24,29 +24,20 @@
 .frontslide-text {
   display: inline-block;
   vertical-align: middle;
-  color: $black;
 }
 
 .frontslide-title {
   font-size: 70px;
+  line-height: 70px;
   margin: 0;
   margin-bottom: 10px;
+  color: white;
+  font-weight: normal;
 }
 
 .frontslide-subtitle {
   margin: 0;
   font-size: 30px;
+  color: white;
+  font-weight: normal;
 }
-
-// .is--transitioning-in {
-//   .frontslide-next {
-//     transform: translate(0, -50%);
-//     opacity: 0;
-//   }
-// }
-
-// .is--dragging {
-//   .frontslide-next {
-//     transform: translate(90px, -50%);
-//   }
-// }

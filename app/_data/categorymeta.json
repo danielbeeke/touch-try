@@ -1,14 +1,14 @@
 {
   "thoughts": {
     "label": "Thoughts",
-    "color": "#6d006d",
+    "color": "#D94E67",
   },
   "blog": {
     "label": "Blog",
-    "color": "#00aa44"
+    "color": "#2E688C"
   },
   "devel": {
     "label": "Devel",
-    "color": "#444fe5"
+    "color": "#D9AC59"
   }
 }
