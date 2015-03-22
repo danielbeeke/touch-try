@@ -1,0 +1,10 @@
+.section-content {
+  opacity: 0;
+  transition: opacity $speed $easing;
+}
+
+.has-increased-main-menu {
+  .section-content {
+    opacity: 1;
+  }
+}

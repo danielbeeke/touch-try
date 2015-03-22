@@ -1,12 +1,17 @@
 .aboutme {
-  width: 100%;
+  width: 50vw;
+  box-sizing: content-box;
   float: left;
   height: 100%;
   background: white;
   position: relative;
   z-index: 2;
-  padding: 100px;
   overflow-y: scroll;
+  padding-right: 20px;
+}
+
+.aboutme-inner {
+  padding: 0 100px;
 }
 
 .aboutme-photo {

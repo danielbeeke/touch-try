@@ -15,8 +15,6 @@ $(function() {
     $('.mainmenuslide').removeAttr('style')
   }, 100)
 
-  $('.aboutme').dragscroll()
-
   $('#slides').aslider({
     startSlide: startSlide,
     cancelCallback: function (info) {
@@ -41,10 +39,13 @@ $(function() {
 
       $('.mainmenu-link').removeAttr('style')
 
-      if (info.slideIndex == 0 && section) {
+      if (info.slideIndex < 2 && section) {
         $('.slides-handle').one('transitionend', function () {
-          window.location = '/'
+          history.replaceState(null, null, '/')
         })
+      }
+      else if (section == $('.mainmenu-link--is-dragged').attr('data-category')) {
+        history.replaceState(null, null, '/' + section + '/')
       }
     },
 
@@ -58,7 +59,7 @@ $(function() {
         var $menuLink = $(info.dragElement).parents('.mainmenu-link')
       }
 
-      if ($menuLink) {
+      if ($menuLink && info.diff < 0 && info.slideIndex != 2 || $menuLink && info.diff > 0 && info.slideIndex == 2) {
         $('body').addClass('has--dragged-mainmenu-link')
         $('.mainmenu-link--is-dragged').removeClass('mainmenu-link--is-dragged')
         $menuLink.addClass('mainmenu-link--is-dragged')

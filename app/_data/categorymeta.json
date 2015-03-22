@@ -7,8 +7,8 @@
     "label": "Blog",
     "color": "#2E688C"
   },
-  "devel": {
-    "label": "Devel",
+  "experiments": {
+    "label": "Experiments",
     "color": "#D9AC59"
   }
 }

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Yo Jekyll!"
-categories: Devel
+categories: Experiments
 ---
 
 # 'Allo, 'Allo!
