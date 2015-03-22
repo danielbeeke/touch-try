@@ -19,6 +19,11 @@ $(function() {
 
   $('#slides').aslider({
     startSlide: startSlide,
+    cancelCallback: function (info) {
+      if ($(info.dragElement).parents('.aboutslide').length && info.slideIndex == 1 && info.diff < 0) {
+        return true
+      }
+    },
     endCallback: function (info) {
       if (info.slideIndex == 2) {
         $('body').addClass('has-increased-main-menu')
@@ -44,11 +49,19 @@ $(function() {
     },
 
     dragCallback: function (info) {
-      // TODO make sure to also work when dragging a child of the menu link.
+      var $menuLink
+
       if ($(info.dragElement).hasClass('mainmenu-link')) {
+        var $menuLink = $(info.dragElement)
+      }
+      else if ($(info.dragElement).parents('.mainmenu-link').length) {
+        var $menuLink = $(info.dragElement).parents('.mainmenu-link')
+      }
+
+      if ($menuLink) {
         $('body').addClass('has--dragged-mainmenu-link')
         $('.mainmenu-link--is-dragged').removeClass('mainmenu-link--is-dragged')
-        $(info.dragElement).addClass('mainmenu-link--is-dragged')
+        $menuLink.addClass('mainmenu-link--is-dragged')
 
         $('.mainmenu-link').css('transition', 'none')
 

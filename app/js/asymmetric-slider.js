@@ -60,16 +60,22 @@
     onEnd: function (e) {
       that.dragging = false
       that.endX = e.screenX
-      that.dragElement = false
       that.addTransition()
 
       that.diff = that.endX - that.startX
 
-      if (that.diff < -that.options.flipPoint && that.slideIndex < (that.slideCount - 1)) {
-        that.slideIndex = that.slideIndex + 1
+      var cancelled = false
+      if (that.options.cancelCallback) {
+        cancelled = that.options.cancelCallback(that)
       }
-      else if (that.diff > that.options.flipPoint  && that.slideIndex > 0) {
-        that.slideIndex = that.slideIndex - 1
+
+      if (!cancelled) {
+        if (that.diff < -that.options.flipPoint && that.slideIndex < (that.slideCount - 1)) {
+          that.slideIndex = that.slideIndex + 1
+        }
+        else if (that.diff > that.options.flipPoint  && that.slideIndex > 0) {
+          that.slideIndex = that.slideIndex - 1
+        }
       }
 
       var $currentSlide = $(that.element).find('.slides-slide:nth-child(' + (that.slideIndex + 1) + ')')
@@ -78,6 +84,7 @@
 
       $('.slides-handle', that.element).css('transform', 'translate3d(' + -transformX + 'px, 0, 0)')
 
+      that.dragElement = false
       if (that.options.endCallback) {
         that.options.endCallback(that)
       }
