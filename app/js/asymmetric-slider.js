@@ -55,6 +55,9 @@
       that.startX = e.screenX
       that.dragElement = e.target
       that.removeTransition()
+      if (that.options.startCallback) {
+        that.options.startCallback(that)
+      }
     },
 
     onEnd: function (e) {

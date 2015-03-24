@@ -5,6 +5,7 @@ $(function() {
   if (section) {
     $('body').addClass('has-increased-main-menu')
     $('.mainmenu-link').css('transition', 'none')
+    $('body').addClass('has-shown-overview')
     $('.mainmenu-link-next').css('transition', 'none')
     $('.mainmenuslide').css('transition', 'none')
     $('.mainmenu-link--' + section).addClass('mainmenu-link--is-dragged')
@@ -33,6 +34,11 @@ $(function() {
             window.location = '/' + $('.mainmenu-link--is-dragged').attr('data-category')
           })
         }
+        else {
+          $('.mainmenu-link--is-dragged').one('transitionend', function () {
+            $('body').addClass('has-shown-overview')
+          })
+        }
       }
       else {
         $('body').removeClass('has-increased-main-menu')
@@ -49,6 +55,10 @@ $(function() {
       else if (section == $('.mainmenu-link--is-dragged').attr('data-category')) {
         history.replaceState(null, null, '/' + section + '/')
       }
+    },
+
+    startCallback: function (info) {
+      $('body').removeClass('has-shown-overview')
     },
 
     dragCallback: function (info) {

@@ -1,8 +1,20 @@
 .frontslide {
-  background-color: $blue;
-  box-shadow: 0 0 30px black;
+  background: url('/img/background.jpg');
   position: relative;
   z-index: 1;
+
+  &:after {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    background: black;
+    opacity: .8;
+    z-index: -1;
+    display: block;
+    position: absolute;
+  }
 }
 
 .frontslide-content {

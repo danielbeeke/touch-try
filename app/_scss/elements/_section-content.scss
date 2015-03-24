@@ -1,25 +1,14 @@
 .section-content {
   opacity: 0;
   transition: all $speed $easing;
-  width: 50vw;
-  box-sizing: content-box;
-  padding-right: 20px;
-  height: 100vh;
-  position: absolute;
-  left: 50vw;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  transform: translateX(0);
+  max-width: 960px;
+  margin: 0 auto;
+  transform: translate(50px, 0);
 }
 
-.has-increased-main-menu {
+.has-shown-overview {
   .mainmenu-link--is-dragged .section-content {
     opacity: 1;
-  }
-}
-
-.is--transitioning-in {
-  .section-content {
-    transform: translateX(50px);
+    transform: translate(0, 0);
   }
 }

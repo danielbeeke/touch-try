@@ -1,0 +1,21 @@
+server {
+  server_name danielbeeke.nl;
+  listen 80;
+  root /var/www/jekyll-build/sites/danielbeeke/dist;
+  index index.html;
+  location / {
+    try_files $uri $uri/ @rewrites;
+  }
+  location @rewrites {
+    rewrite ^ /index.php last;
+  }
+  location ~* \.(jpg|jpeg|gif|css|png|js|ico|html|svg)$ {
+    access_log off;
+    expires max;
+    add_header Pragma public;
+    add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+  }
+  location ~ /\.ht {
+    deny  all;
+  }
+}
