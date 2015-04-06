@@ -1,5 +1,5 @@
 server {
-  server_name danielbeeke.nl;
+  server_name beta.danielbeeke.nl;
   listen 80;
   root /var/www/jekyll-build/sites/danielbeeke/dist;
   index index.html;

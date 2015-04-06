@@ -35,7 +35,7 @@
 
       <div class="slides-slide mainmenu mainmenuslide mainmenu--linkcount-{{ site.categories | size }}">
         {% for category in site.categories %}
-          <div class="mainmenu-link mainmenu-link--{{ category[0] }} color-{{ category[0] }}" data-category="{{ category[0] }}">
+          <div class="mainmenu-link mainmenu-link--{{ category[0] }} color-{{ category[0] }} {% if page_path_exploded[0] == category[0] %}mainmenu-link--is-dragged{% endif %}" data-category="{{ category[0] }}">
             <h2 class="mainmenu-link-text">{{ category[0] }}</h2>
             <div class="mainmenu-link-next nextarrow"></div>
 

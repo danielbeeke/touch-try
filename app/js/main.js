@@ -5,10 +5,10 @@ $(function() {
   if (section) {
     $('body').addClass('has-increased-main-menu')
     $('.mainmenu-link').css('transition', 'none')
+    $('.mainmenu-link-text').css('transition', 'none')
     $('body').addClass('has-shown-overview')
     $('.mainmenu-link-next').css('transition', 'none')
     $('.mainmenuslide').css('transition', 'none')
-    $('.mainmenu-link--' + section).addClass('mainmenu-link--is-dragged')
     startSlide = 2
   }
 
@@ -16,6 +16,7 @@ $(function() {
     $('.mainmenu-link').removeAttr('style')
     $('.mainmenuslide').removeAttr('style')
     $('.mainmenu-link-next').removeAttr('style')
+    $('.mainmenu-link-text').removeAttr('style')
   }, 100)
 
   $('#slides').aslider({
