@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "Yo Jekyll!"
+title: "Yo Jekyll!"
 categories: Thoughts
 image: voeten.jpg
+published: true
 ---
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec metus nibh, convallis efficitur tellus vel, maximus pellentesque ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate ante vel fermentum feugiat. Mauris vestibulum porttitor erat nec viverra. In egestas rhoncus ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam fringilla justo quis ullamcorper rutrum. Aliquam erat volutpat. Praesent porttitor diam justo, sed convallis ex mattis sed. Etiam elementum vulputate eros sed aliquam. Mauris imperdiet accumsan nibh, vitae aliquam nunc sollicitudin ut. Praesent luctus gravida consectetur. Donec id porttitor risus, consectetur luctus justo. Nam aliquam vestibulum mauris, nec imperdiet mauris feugiat sit amet.
 
