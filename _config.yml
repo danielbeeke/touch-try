@@ -29,10 +29,6 @@ prose:
   media: 'img'
   metadata:
     app/_posts:
-      - name: "category"
-        field:
-          element: "hidden"
-          value: "post"
       - name: "layout"
         field:
           element: "hidden"
